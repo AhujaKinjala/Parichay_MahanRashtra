@@ -19,7 +19,7 @@ public class MainActivity2 extends AppCompatActivity {
         public Button button;
         public Button reg;
         public Button skip;
-
+        DBHelper DB;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity2 extends AppCompatActivity {
             button = (Button) findViewById(R.id.login);
             reg = (Button) findViewById(R.id.button3);
             skip = (Button) findViewById(R.id.button4);
+
             reg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
