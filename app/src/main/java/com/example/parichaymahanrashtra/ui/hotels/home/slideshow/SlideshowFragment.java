@@ -1,4 +1,4 @@
-package com.example.parichaymahanrashtra.ui.slideshow;
+package com.example.parichaymahanrashtra.ui.hotels.home.slideshow;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

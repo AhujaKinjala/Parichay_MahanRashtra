@@ -1,4 +1,4 @@
-package com.example.parichaymahanrashtra.ui.slideshow;
+package com.example.parichaymahanrashtra.ui.hotels.home.slideshow;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package com.example.parichaymahanrashtra.ui.favourites;
+package com.example.parichaymahanrashtra.ui.about.favourites;
 
 import androidx.lifecycle.ViewModel;
 

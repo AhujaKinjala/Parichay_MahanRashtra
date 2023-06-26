@@ -19,7 +19,48 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase MyDB) {
         MyDB.execSQL("create Table users(email TEXT primary key,password TEXT,name TEXT,Phone TEXT)");
-        MyDB.execSQL("create Table places()")
+        MyDB.execSQL("create Table places( id primary key,name TEXT,description TEXT,category TEXT)");
+        MyDB.execSQL("create Table bucketlist( id primary key,name TEXT,FOREIGN KEY(id) references users(id),FOREIGN KEY(name) references places(name))");
+        //MyDB=this.getWritableDatabase();
+        ContentValues values=new ContentValues();
+        values.put("id",1);
+        values.put("name","Kanheri Caves");
+        values.put("Category","Caves");
+        long result=MyDB.insert("places",null,values);
+        values=new ContentValues();
+        values.put("id",2);
+        values.put("name","Ajanta Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values=new ContentValues();
+        values.put("id",3);
+        values.put("name","Ellora Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values=new ContentValues();
+        values.put("id",4);
+        values.put("name","Elephanta Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values=new ContentValues();
+        values.put("id",5);
+        values.put("name","Karla Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values=new ContentValues();
+        values.put("id",6);
+        values.put("name","Bhaja Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values.put("id",7);
+        values.put("name","Aurangabad Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        values.put("id",8);
+        values.put("name","Lenyadri Caves");
+        values.put("Category","Caves");
+        result=MyDB.insert("places",null,values);
+        //MyDB.execSQL("create Table places()")
     }
 
     @Override

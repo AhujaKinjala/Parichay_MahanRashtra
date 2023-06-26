@@ -1,4 +1,4 @@
-package com.example.parichaymahanrashtra.ui.home;
+package com.example.parichaymahanrashtra.ui.hotels.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

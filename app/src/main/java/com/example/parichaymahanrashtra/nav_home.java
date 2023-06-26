@@ -1,20 +1,27 @@
 package com.example.parichaymahanrashtra;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.parichaymahanrashtra.databinding.ActivityNavHomeBinding;
+import com.example.parichaymahanrashtra.ui.bucketlist.Bucketlist;
+import com.example.parichaymahanrashtra.ui.hotels.home.HomeFragment;
+import com.example.parichaymahanrashtra.ui.location.Location;
+import com.example.parichaymahanrashtra.ui.logout.Logout;
+import com.example.parichaymahanrashtra.ui.transport.Transport;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,14 +29,12 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.parichaymahanrashtra.databinding.ActivityNavHomeBinding;
-import com.google.firebase.auth.FirebaseAuth;
-
 public class nav_home extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityNavHomeBinding binding;
     private MenuItem logout;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
     private ImageButton fort,cave,temple,shopping,agrot,ruralt;
 
 
@@ -57,6 +62,46 @@ public class nav_home extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),Forts.class));
             }
         });
+        binding.appBarNavHome.bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch(item.getItemId()){
+
+                case R.id.map:
+                    startActivity(new Intent(getApplication(),
+                            mapfin.class));
+
+                    return true;
+
+
+                case R.id.transport:
+                    startActivity(new Intent(getApplication(),
+                            transportfin.class));
+
+                    return true;
+
+
+                case R.id.home:
+                    startActivity(new Intent(getApplication(),
+                            nav_home.class));
+
+                    return true;
+
+                case R.id.buckets:
+                    startActivity(new Intent(getApplicationContext(),
+                            Retrievedata.class));
+                    return true;
+
+
+                case R.id.profile:
+                    startActivity(new Intent(getApplication(),
+                            profilefin.class));
+
+                    return true;
+
+
+
+            }
+            return  false;
+        });
 
         setSupportActionBar(binding.appBarNavHome.toolbar);
 //        binding.appBarNavHome.fab.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +124,12 @@ public class nav_home extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_home,fragment);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -97,21 +148,17 @@ public class nav_home extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.action_logout)
         {
-            SharedPreferences.Editor editor = getSharedPreferences("name", MODE_PRIVATE).edit();
-            editor.putString("password", "");
-            editor.putString("email", "");
-            editor.putBoolean("isLoggedIn", false);
-            editor.apply();
+            startActivity(new Intent(getApplicationContext(),pop.class));
 
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("finish", true);
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            Toast.makeText(this, "Logged Out succesfully", Toast.LENGTH_SHORT).show();
-
-            finish();
         }
-        return true;
+        else{
+            return true;
+        }
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
 

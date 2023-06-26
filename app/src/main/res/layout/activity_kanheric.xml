@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/idLVreviews"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
@@ -150,7 +151,7 @@
 
                 <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="200dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/desc">
 
@@ -169,15 +170,62 @@
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="40dp"
                         android:fontFamily="@font/inter_medium"
                         android:gravity="center_horizontal|top"
-                        android:text="On the outskirts of Mumbai, away from the hustle and bustle of the city, lies this green and airy tourist spot – Kanheri Caves. This serene cave complex is situated on a hillside and you can access it through steps cut into the rocks.Kanheri Caves used to be a Buddhist monastery and a point for worship, study and meditation. It is located within the Sanjay Gandhi National Park and you will need to trek through lush green forests to reach the caves. If you’re looking for a tranquil place to get a view of the city’s skyline, Kanheri Caves in Mumbai should be your choice.The most recent caves are from 11th century CE. Most of them served as Buddhist viharas. "
+                        android:text="Address:Sanjay Gandhi National Park, Borivali East, Mumbai, Maharashtra - 600066 "
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="#574646"
                         android:textSize="16sp" />
 
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center_horizontal|top"
+                        android:text="Entry Fee for Indians : 5 Rs.Entry Fee for Foreigners : 100 Rs."
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="#574646"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="120dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center_horizontal|top"
+                        android:text="Visiting Hours - 7:30 AM - 5:30 PM"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="#574646"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="140dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center_horizontal|top"
+                        android:text="Nearest Railway Station is Thane"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="#574646"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="160dp"
+                        android:fontFamily="@font/inter_medium"
+                        android:gravity="center_horizontal|top"
+                        android:text="Photography is allowed"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        android:textColor="#574646"
+                        android:textSize="16sp" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -203,8 +251,8 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="40dp"
                         android:fontFamily="@font/inter_medium"
-                        android:gravity="center_horizontal"
-                        android:text="The word ‘Kanheri’ has been derived from Krishnagiri, a Sanskrit word that means “Black Mountain”. This ancient monastery has been carved out of black basalt rock and has been a learning centre and pilgrimage site for Buddhists.  Much of the inscriptions are still undeciphered, but people believe that the first excavations started sometime around the 1st or 2nd century BCE. The large halls with stupas suggest that the caves were significant as Buddhist shrines and that the place played an important role in the propagation of Buddhism in India."
+                        android:gravity="left"
+                        android:text="The word ‘Kanheri’ has been derived from Krishnagiri, a Sanskrit word that means “Black Mountain”.These caves were carved out of a basaltic rock formation and were inhabited by Buddhist monks between the 1st century BCE and 10th century CE. The caves contain intricate carvings and sculptures that depict various Buddhist themes and provide insights into the daily life and culture of the monks who lived there. The Kanheri Caves are a significant historical and cultural landmark and attract visitors from around the world."
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="#574646"
                         android:textSize="16sp" />
@@ -262,12 +310,23 @@
                     android:layout_marginTop="10dp"
                     android:background="#00BCD4"
                     android:gravity="center"
-                    android:text="Rate"
+                    android:text="View Reviews"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     app:backgroundTint="#00BCD4"
                     app:cornerRadius="10dp" />
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"/>
+
 
             </LinearLayout>
         </ScrollView>
